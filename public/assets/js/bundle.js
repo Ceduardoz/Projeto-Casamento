@@ -148,60 +148,72 @@ function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { 
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
 function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
 function handleFormSubmit() {
-  var form = document.getElementById("form");
-  form.addEventListener("submit", /*#__PURE__*/function () {
-    var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee(e) {
-      var data, res, result, _t;
-      return _regenerator().w(function (_context) {
-        while (1) switch (_context.p = _context.n) {
-          case 0:
-            e.preventDefault();
-            data = {
-              nome: form.nome.value,
-              adultos: form.adultos.value,
-              criancas: form.criancas.value,
-              mensagem: form.mensagem.value
-            };
-            _context.p = 1;
-            _context.n = 2;
-            return fetch("".concat(window.location.origin, "/confirmar"), {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json"
-              },
-              body: JSON.stringify(data)
-            });
-          case 2:
-            res = _context.v;
-            _context.n = 3;
-            return res.json();
-          case 3:
-            result = _context.v;
-            if (result.success) {
-              alert("Confirmação registrada!");
-              form.reset();
-            } else {
-              alert("Erro ao registrar confirmação.");
-            }
-            _context.n = 5;
-            break;
-          case 4:
-            _context.p = 4;
-            _t = _context.v;
-            console.error(_t);
-            alert("Ocorreu um erro ao enviar a confirmação.");
-          case 5:
-            return _context.a(2);
-        }
-      }, _callee, null, [[1, 4]]);
-    }));
-    return function (_x) {
-      return _ref.apply(this, arguments);
-    };
-  }());
+  return _handleFormSubmit.apply(this, arguments);
 }
 
 // Botão de download
+function _handleFormSubmit() {
+  _handleFormSubmit = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee2() {
+    var form;
+    return _regenerator().w(function (_context2) {
+      while (1) switch (_context2.n) {
+        case 0:
+          form = document.getElementById("form");
+          form.addEventListener("submit", /*#__PURE__*/function () {
+            var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee(e) {
+              var data, res, result, _t;
+              return _regenerator().w(function (_context) {
+                while (1) switch (_context.p = _context.n) {
+                  case 0:
+                    e.preventDefault();
+                    data = {
+                      nome: form.nome.value,
+                      adultos: form.adultos.value,
+                      criancas: form.criancas.value,
+                      mensagem: form.mensagem.value
+                    };
+                    _context.p = 1;
+                    _context.n = 2;
+                    return fetch("".concat(window.location.origin, "/confirmar"), {
+                      method: "POST",
+                      headers: {
+                        "Content-Type": "application/json"
+                      },
+                      body: JSON.stringify(data)
+                    });
+                  case 2:
+                    res = _context.v;
+                    _context.n = 3;
+                    return res.json();
+                  case 3:
+                    result = _context.v;
+                    if (result.success) {
+                      alert("Confirmação registrada!");
+                      form.reset();
+                    }
+                    _context.n = 5;
+                    break;
+                  case 4:
+                    _context.p = 4;
+                    _t = _context.v;
+                    console.error(_t);
+                    alert("Ocorreu um erro ao enviar a confirmação.");
+                  case 5:
+                    return _context.a(2);
+                }
+              }, _callee, null, [[1, 4]]);
+            }));
+            return function (_x) {
+              return _ref.apply(this, arguments);
+            };
+          }());
+        case 1:
+          return _context2.a(2);
+      }
+    }, _callee2);
+  }));
+  return _handleFormSubmit.apply(this, arguments);
+}
 function handleDownload() {
   var btnDownload = document.getElementById("btnDowload");
   btnDownload.addEventListener("click", function () {

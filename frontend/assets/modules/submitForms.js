@@ -1,9 +1,8 @@
-export function handleFormSubmit() {
+export async function handleFormSubmit() {
   const form = document.getElementById("form");
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
-
     const data = {
       nome: form.nome.value,
       adultos: form.adultos.value,
@@ -12,7 +11,6 @@ export function handleFormSubmit() {
     };
 
     try {
-      // Aqui você coloca o fetch com window.location.origin
       const res = await fetch(`${window.location.origin}/confirmar`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -20,12 +18,9 @@ export function handleFormSubmit() {
       });
 
       const result = await res.json();
-
       if (result.success) {
         alert("Confirmação registrada!");
         form.reset();
-      } else {
-        alert("Erro ao registrar confirmação.");
       }
     } catch (err) {
       console.error(err);
@@ -33,6 +28,7 @@ export function handleFormSubmit() {
     }
   });
 }
+
 
 
 // Botão de download
