@@ -87,12 +87,7 @@ __webpack_require__.r(__webpack_exports__);
 function iniciarContador() {
   var contadorEl = document.getElementById("contador");
   if (!contadorEl) return;
-  var dataFinal = Number(localStorage.getItem("dataAlvo"));
-  if (isNaN(dataFinal)) {
-    var dataAlvo = new Date("2025-10-26T23:59:59").getTime();
-    localStorage.setItem("dataAlvo", dataAlvo);
-    dataFinal = dataAlvo;
-  }
+  var dataFinal = new Date("2025-10-26T23:59:59").getTime();
   function atualizarContador() {
     var agora = new Date().getTime();
     var distancia = dataFinal - agora;
@@ -107,7 +102,7 @@ function iniciarContador() {
     var segundos = Math.floor(distancia % (1000 * 60) / 1000);
     contadorEl.innerHTML = "".concat(dias, "d ").concat(horas, "h ").concat(minutos, "m ").concat(segundos, "s");
   }
-  atualizarContador(); // primeira atualização
+  atualizarContador();
   var intervalo = setInterval(atualizarContador, 1000);
 }
 

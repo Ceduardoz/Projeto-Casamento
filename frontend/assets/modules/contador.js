@@ -2,12 +2,7 @@ export function iniciarContador() {
     const contadorEl = document.getElementById("contador");
     if (!contadorEl) return;
 
-    let dataFinal = Number(localStorage.getItem("dataAlvo"));
-    if (isNaN(dataFinal)) {
-        const dataAlvo = new Date("2025-10-26T23:59:59").getTime();
-        localStorage.setItem("dataAlvo", dataAlvo);
-        dataFinal = dataAlvo;
-    }
+    const dataFinal = new Date("2025-10-26T23:59:59").getTime();
 
     function atualizarContador() {
         const agora = new Date().getTime();
@@ -27,6 +22,6 @@ export function iniciarContador() {
         contadorEl.innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
     }
 
-    atualizarContador(); // primeira atualização
+    atualizarContador();
     const intervalo = setInterval(atualizarContador, 1000);
 }
