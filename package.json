@@ -4,11 +4,12 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js --ignore public --ignore frontend",
-    "dev": "webpack -w",
-    "sass": "sass frontend/assets/css/scss:frontend/assets/css/css -w"
-  },
+  "start": "node server.js",
+  "dev": "concurrently \"npm run sass\" \"npm run webpack-watch\"",
+  "sass": "sass frontend/assets/css/scss:frontend/assets/css/css",
+  "webpack-watch": "webpack --watch",
+  "build": "sass frontend/assets/css/scss:frontend/assets/css/css && webpack"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
