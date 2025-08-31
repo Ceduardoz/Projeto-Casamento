@@ -87,9 +87,12 @@ __webpack_require__.r(__webpack_exports__);
 function iniciarContador() {
   var contadorEl = document.getElementById("contador");
   if (!contadorEl) return;
-  var dataFinal = new Date("2025-10-26T23:59:59").getTime();
+
+  // Data alvo do casamento (horário local)
+  var dataFinal = new Date(2025, 9, 26, 23, 59, 59).getTime(); // Outubro = 9
+
   function atualizarContador() {
-    var agora = new Date().getTime();
+    var agora = new Date().getTime(); // pega o horário exato de agora
     var distancia = dataFinal - agora;
     if (distancia <= 0) {
       contadorEl.innerHTML = "🎉 Tempo Esgotado!";
@@ -102,8 +105,8 @@ function iniciarContador() {
     var segundos = Math.floor(distancia % (1000 * 60) / 1000);
     contadorEl.innerHTML = "".concat(dias, "d ").concat(horas, "h ").concat(minutos, "m ").concat(segundos, "s");
   }
-  atualizarContador();
-  var intervalo = setInterval(atualizarContador, 1000);
+  atualizarContador(); // primeira atualização imediata
+  var intervalo = setInterval(atualizarContador, 1000); // atualiza a cada segundo
 }
 
 /***/ }),

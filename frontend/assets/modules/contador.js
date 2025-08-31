@@ -2,10 +2,11 @@ export function iniciarContador() {
     const contadorEl = document.getElementById("contador");
     if (!contadorEl) return;
 
-    const dataFinal = new Date("2025-10-26T23:59:59").getTime();
+    // Data alvo do casamento (horário local)
+    const dataFinal = new Date(2025, 9, 26, 23, 59, 59).getTime(); // Outubro = 9
 
     function atualizarContador() {
-        const agora = new Date().getTime();
+        const agora = new Date().getTime(); // pega o horário exato de agora
         const distancia = dataFinal - agora;
 
         if (distancia <= 0) {
@@ -22,6 +23,6 @@ export function iniciarContador() {
         contadorEl.innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
     }
 
-    atualizarContador();
-    const intervalo = setInterval(atualizarContador, 1000);
+    atualizarContador(); // primeira atualização imediata
+    const intervalo = setInterval(atualizarContador, 1000); // atualiza a cada segundo
 }
