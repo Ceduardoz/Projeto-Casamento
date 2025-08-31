@@ -1,7 +1,10 @@
+@use "./mixins.scss" as *;
+@use "./variaveis.scss" as *;
 
 // Tablets
 @media (max-width: 1024px) {
   body {
+    @include Background($BackgroundLittle, $MainColor);
     height: auto;
     padding: 20px;
   }
@@ -26,6 +29,10 @@
 // Celulares
 @media (max-width: 768px) {
   body {
+    background-image: url($BackgroundLittle);
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
     padding: 10px;
   }
 
