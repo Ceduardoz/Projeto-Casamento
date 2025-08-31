@@ -1,0 +1,23 @@
+@use "variaveis.scss" as *;
+
+@mixin Background($image, $color: #fff){
+    background-color: $MainColor;
+    background-image: url($Background);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 60vh;
+}
+
+@mixin BodyDefault() {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin dfCenter() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

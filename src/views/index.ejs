@@ -1,0 +1,65 @@
+  <!DOCTYPE html>
+  <html lang="pt-BR">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Modelo</title>
+  </head>
+
+  <body>
+    <!--HOME-->
+    <section id="Home" class="page active"> 
+        <div class="divimg"><!--Gerado pelo CSS--></div>
+        <div class="container">
+          <h1>Aparecida e Josenildo</h1>
+          <p>"O amor é paciente, o amor é bondoso. <br> Não inveja, não se vangloria, não se orgulha" 1 Cor 13:4</p>
+          <p>faltam</p>
+          <div id="contador"></div>
+          <div class="btnHome">
+            <button data-target="Presence">Lista de Presença</button>
+            <button data-target="Presents">Lista de Presentes</button>
+          </div>
+        </div>
+    </section>
+
+    <!--CONFIRMAÇÃO-->
+    <section id="Presence" class="page">
+      <h1>Confirme sua Presença</h1>
+      <form id="form">
+        <div class="containerMain">
+          <div class="containerInputs">
+            <input type="text" name="nome" placeholder="Seu nome" required><br>
+            <input type="number" name="adultos" placeholder="Qtd. Adultos" min="0" required><br>
+            <input type="number" name="criancas" placeholder="Qtd. Crianças (≤8 anos)" min="0"><br>
+            <textarea name="mensagem" placeholder="Mensagem para os noivos"></textarea><br>
+          </div>
+           <div class="containerBtn">
+            <button id="btnAdd">Confirmar Presença</button>
+            <button data-target="Home">Voltar</button>
+          </div>
+        </div>
+      </form>   
+      <button id="btnDowload" type="button">Dowload</button>
+    </section>
+
+    <!--LISTA CONVIDADOS-->
+    <section id="ListaConvidados" class="page">
+      <h2>Lista de Convidados</h2>
+      <ul id="lista"></ul>
+      <button data-target="Presence">Voltar</button>
+    </section>
+
+    <!--PRESENTES-->
+    <section id="Presents" class="page">
+      <h1>Presentes</h1>
+      <p><strong>Sua presença é o melhor presente! Mas, se quiser nos presentear de outra forma, <br> aceitamos uma ajudinha com um PIX para investir nos nossos sonhos</strong></p>
+      <div class="imgPix"></div>
+      <button data-target="Home">Voltar</button>
+    </section>
+
+    <script src="./assets/js/bundle.js"></script>
+  </body>
+
+  </html>

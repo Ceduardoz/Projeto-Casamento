@@ -1,0 +1,82 @@
+
+// Tablets
+@media (max-width: 1024px) {
+  body {
+    height: auto;
+    padding: 20px;
+  }
+
+  .page .container h1 {
+    font-size: 3em;
+  }
+
+  .page .container p {
+    font-size: 1.2em;
+  }
+
+  #Presence .containerInputs {
+    padding-left: 50px;
+  }
+
+  #Presence .containerBtn {
+    padding-left: 0px;
+  }
+}
+
+// Celulares
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .page .container h1 {
+    font-size: 2em;
+  }
+
+  .page .container p {
+    font-size: 1em;
+  }
+
+  #Presence .containerInputs {
+    grid-template-columns: 1fr;
+    padding-left: 20px;
+  }
+
+  #Presence h1{
+    font-size: 2em;
+  }
+
+  .containerBtn {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 10px;
+    padding-left: 20px;
+  }
+
+  .btnHome {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .imgPix {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+// Pequenas telas
+@media (max-width: 480px) {
+  .imgPix {
+    width: 80px;
+    height: 80px;
+  }
+
+  input, textarea {
+    font-size: 0.9em;
+  }
+
+  button {
+    width: 100%;
+  }
+}
