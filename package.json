@@ -4,13 +4,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js", 
-    "dev": "concurrently \"npm run sass-watch\" \"npm run webpack-watch\"",
+    "start": "node server.js",
+    "dev": "concurrently \"npm run sass\" \"npm run webpack-watch\"",
     "sass": "sass frontend/assets/css/scss:frontend/assets/css/css",
-    "sass-watch": "sass frontend/assets/css/scss:frontend/assets/css/css --watch",
-    "webpack": "webpack",
     "webpack-watch": "webpack --watch",
-    "build": "npm run sass && npm run webpack"
+    "build": "sass frontend/assets/css/scss:frontend/assets/css/css && webpack"
   },
   "keywords": [],
   "author": "",
