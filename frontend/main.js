@@ -4,7 +4,7 @@ import { navigate } from './assets/modules/sections.js';
 import { iniciarContador } from './assets/modules/contador.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  navigate('Presence');
+  navigate('Home');
 
   handleFormSubmit();
   handleDownload();

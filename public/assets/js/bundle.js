@@ -1056,7 +1056,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  (0,_assets_modules_sections_js__WEBPACK_IMPORTED_MODULE_2__.navigate)('Presence');
+  (0,_assets_modules_sections_js__WEBPACK_IMPORTED_MODULE_2__.navigate)('Home');
   (0,_assets_modules_submitForms_js__WEBPACK_IMPORTED_MODULE_1__.handleFormSubmit)();
   (0,_assets_modules_submitForms_js__WEBPACK_IMPORTED_MODULE_1__.handleDownload)();
   document.querySelectorAll('button[data-target]').forEach(function (btn) {
