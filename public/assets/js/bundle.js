@@ -164,7 +164,7 @@ function handleFormSubmit() {
             };
             _context.p = 1;
             _context.n = 2;
-            return fetch("/confirmar", {
+            return fetch("".concat(window.location.origin, "/confirmar"), {
               method: "POST",
               headers: {
                 "Content-Type": "application/json"

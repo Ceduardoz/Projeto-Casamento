@@ -12,8 +12,8 @@ export function handleFormSubmit() {
     };
 
     try {
-      // Aqui é onde você coloca o fetch
-      const res = await fetch("/confirmar", {
+      // Aqui você coloca o fetch com window.location.origin
+      const res = await fetch(`${window.location.origin}/confirmar`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
@@ -33,6 +33,7 @@ export function handleFormSubmit() {
     }
   });
 }
+
 
 // Botão de download
 export function handleDownload() {
