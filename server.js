@@ -3,24 +3,28 @@ const app = express();
 const routes = require("./routes");
 const path = require("path");
 const cors = require("cors");
-const bodyParser = require("body-parser");
+
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(express.static(path.resolve(__dirname, "public")));
-app.use(express.static(path.resolve(__dirname, "frontend")));
+// Servindo arquivos estáticos
+app.use(express.static(path.join(__dirname, "frontend/assets/css/css")));
+app.use(express.static(path.join(__dirname, "frontend/assets/js")));
+app.use(express.static(path.join(__dirname, "public")));
 
-// configurando EJS
-app.set("views", path.resolve(__dirname, "src", "views"));
+// EJS
+app.set("views", path.join(__dirname, "src/views"));
 app.set("view engine", "ejs");
 
+// CORS
 app.use(cors());
-app.use(bodyParser.json());
 
+// Rotas
 app.use(routes);
 
-app.listen(3000,() => {
-    console.log("Acessar http://localhost:3000");
-    console.log("Servido na porta 3000");
+// Inicia o servidor
+app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
 });
