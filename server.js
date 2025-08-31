@@ -5,7 +5,9 @@ const path = require("path");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 app.use(express.static(path.resolve(__dirname, "public")));
 app.use(express.static(path.resolve(__dirname, "frontend")));
 
