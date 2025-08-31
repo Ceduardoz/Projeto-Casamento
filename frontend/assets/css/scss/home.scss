@@ -1,5 +1,6 @@
 @use "./variaveis.scss" as *;
 @use "./mixins.scss" as *;
+@use "sass:color";
 
 * {
   @include BodyDefault();
@@ -55,7 +56,7 @@ body {
             align-items: center;
 
             &:hover {
-            background-color: darken($MainColor, 10%);
+            background-color: color.adjust($MainColor, $lightness: -10%);
             }
         }
     }
